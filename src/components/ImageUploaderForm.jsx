@@ -25,3 +25,13 @@
     // In this component, you will need to pull out addPhoto from context and call it on handleSubmit and pass in the url.
 
 import React from 'react';
+
+function ImageUploaderForm(){
+    return(
+        <form className="ImageUploaderForm">
+            <input />
+            <button>Submit</button>
+        </form>
+    );
+}
+export default ImageUploaderForm;

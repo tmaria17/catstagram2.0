@@ -38,10 +38,17 @@
 
 
 import React from 'react';
+import data from './data.json';
+
+import Header from './components/Header';
+import HomePage from './pages/HomePage';
+const { photos } = data;
 
 function App() {
     return (
         <div>
+            <Header />
+            <HomePage photos={photos}/>
         </div>
     );
 }

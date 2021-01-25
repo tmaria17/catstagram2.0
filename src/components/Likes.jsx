@@ -18,4 +18,29 @@
 	 // increase or decrease the likes based on whether button click is like/ unlike
 	 // hint: take the total likes as a prop, and convert it to state
 
-import React from 'react';
+import React, {useState} from 'react';
+function Likes(props){
+	const { likeCount } = props;
+	const [liked, setLiked] = useState(false)
+	const [totalLikesCount, setLikesCount] = useState(likeCount)
+	const handleLikeButtonClick = () =>{
+		if (liked) {
+			setLikesCount(totalLikesCount - 1)
+		} else {
+			setLikesCount(totalLikesCount + 1)
+
+		}
+		setLiked(!liked)
+	}
+	return(
+		<div className="Likes">
+			<span>{likeCount} likes</span>
+			<button onClick={handleLikeButtonClick}>Heart</button>
+				{ liked ? ' loved ! ' : "not loved (yet)"}
+				real likes : {totalLikesCount}
+		</div>
+
+
+	);
+}
+export default Likes;
